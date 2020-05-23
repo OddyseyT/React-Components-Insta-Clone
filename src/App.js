@@ -17,8 +17,9 @@ const App = () => {
   console.log(dummyData)
   return (
     <div className="App">
-      <PostsPage data={data}/>
       <SearchBar />
+      <PostsPage data={data}/>
+
       {/* Add imported components here to render them */}
     </div>
   );
