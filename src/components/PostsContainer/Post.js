@@ -9,7 +9,7 @@ import "./Posts.css";
 // pass props in this file to
 const Post = props => {
   console.log(props)
-  const [count, setCount] = useState(props.post.count);
+  const [count, setCount] = useState(props.post.likes);
   // set up state for the likes
   
 
@@ -30,8 +30,8 @@ const Post = props => {
       </div>
       <div className="counter">
       <LikeSection
-       clicks = {count} 
-       updateClicks={setCount}/>
+       clicks={count}
+       setCount={setCount}/>
       </div>
       <CommentSection
         postId={props.post.imageUrl}
