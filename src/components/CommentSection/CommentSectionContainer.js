@@ -3,22 +3,27 @@ import React, { useState } from "react";
 import CommentInput from "./CommentInput";
 import Comment from "./Comment";
 import "./Comment.css";
+import { createPortal } from "react-dom";
 
 const CommentSection = props => {
+  console.log(props)
   // Add state for the comments
-  const [ data, setData ] = useState(Comment)
+const [ data, setData ] = useState(props.comments);
+
+/*const [selectPost, setSelectPost] = useState(comments[0].text)*/
  
   return (
-    <div>
-      {/* map through the comments data and return the Comment component */}
-      {props.data.map(data => (
-      <div key={data.username}>
-       <Comment />  
-				
-      <CommentInput />
+   <div>
+    {data.map((comments, index) => {
+          return (
+            <Comment comment = {comments}
+           
+            />
+          )})}
       
-      </div>))}
+				
+      <CommentInput input = {CommentInput}/>
       </div>
-  )
-    }
+      )}
+
 export default CommentSection;
