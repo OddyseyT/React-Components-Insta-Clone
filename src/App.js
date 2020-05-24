@@ -14,7 +14,9 @@ import  dummyData  from "./dummy-data";
 
 const App = () => {
   const [ data, setData ] = useState(dummyData)
+
   console.log(dummyData)
+
   return (
     <div className="App">
       <SearchBar />

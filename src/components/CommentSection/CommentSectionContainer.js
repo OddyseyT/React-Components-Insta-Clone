@@ -10,7 +10,7 @@ const CommentSection = props => {
   // Add state for the comments
 const [ data, setData ] = useState(props.comments);
 
-/*const [selectPost, setSelectPost] = useState(comments[0].text)*/
+
  
   return (
    <div>
