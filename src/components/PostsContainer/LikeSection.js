@@ -7,6 +7,12 @@ import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons'
 
 const LikeSection = props => {
   console.log(props)
+  function likeFunction(props) {
+    if (props.clicked){
+    return (props.setCount + 1)}
+      return props.setCount -1;
+}
+  
   return (
     
     <div>
@@ -14,12 +20,15 @@ const LikeSection = props => {
         className="like-section"
         key="likes-icons-container"
       >
-       <div className="like-section-wrapper" onClick={() => props.setCount(props.clicks+1)}>
+   
+       <div className="like-section-wrapper" onClick={() =>  {likeFunction()}}>
+        </div>
+   
 
           <FontAwesomeIcon icon={faHeart} />
-        </div>
         <div className="like-section-wrapper">
           <FontAwesomeIcon icon={faComment} />
+
         </div>
       </div>
      <p className="like-number">{`Likes: ${props.clicks}`}</p>

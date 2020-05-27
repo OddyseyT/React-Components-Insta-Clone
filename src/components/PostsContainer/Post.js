@@ -11,6 +11,9 @@ const Post = props => {
   console.log(props)
   const [count, setCount] = useState(props.post.likes);
   // set up state for the likes
+  const clicked = false;
+  if (setCount===count+1) clicked = true;
+  
   
 
   return (
@@ -31,7 +34,9 @@ const Post = props => {
       <div className="counter">
       <LikeSection
        clicks={count}
-       setCount={setCount}/>
+       setCount={setCount}
+       clicked={clicked}
+    />
       </div>
       <CommentSection
         postId={props.post.imageUrl}
