@@ -11,8 +11,19 @@ const Post = props => {
   console.log(props)
   const [count, setCount] = useState(props.post.likes);
   // set up state for the likes
-  const clicked = false;
-  if (setCount===count+1) clicked = true;
+  const [clicks, setClicks] = useState(false);
+  const clicked = () =>{
+  if (clicks) {
+   setClicks(false);
+   setCount(count-1);
+  }
+  else {
+    setClicks(true);
+    setCount(count+1);
+  }
+}
+
+
   
   
 
